@@ -43,7 +43,7 @@ export const loginPelanggan = (pelanggan) => async (dispatch) => {
       const data = await response.json();
       const token = data.token;
       localStorage.setItem("token", token);
-      window.location.href = "admin";
+      // window.location.href = "admin";
       dispatch({
         type: pelangganActions.CREATE_PELANGGAN_SUCCESS,
         payload: data,

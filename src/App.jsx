@@ -30,7 +30,6 @@ const Layout = () => {
     "/addproduk",
     "/hasil",
     "/editproduk/:id",
-    "/admin",
   ];
 
   return (

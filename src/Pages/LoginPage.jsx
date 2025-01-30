@@ -1,40 +1,44 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { loginPelanggan } from "../Redux/action/user.action";
+import { useNavigate, Link } from "react-router-dom"; // Tambahkan useNavigate & Link
+import { loginPelanggan } from "../redux/authSlice"; // Sesuaikan dengan path Redux
 
 function LoginPage() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  
   const [userData, setUserData] = useState({
     email: "",
     password: "",
   });
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // Tambahkan state loading
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setErrorMessage(""); // Reset pesan error sebelum login
-  
+    setIsLoading(true); // Tampilkan loading saat login diproses
+
     try {
       const pelangganLogin = {
         email: userData.email,
         password: userData.password,
       };
-  
-      // Dispatch login action
-      const response = await dispatch(loginPelanggan(pelangganLogin)).unwrap();
-  
-      console.log("Login berhasil:", response); // Log hasil login
+
+      // Dispatch login action dan unwrap agar error bisa ditangkap di catch
+      const response = await dispatch(loginPelanggan(pelangganLogin));
+
+      console.log("Login berhasil:", response);
+      navigate("/admin"); // Navigasi ke halaman admin setelah login sukses
     } catch (error) {
       console.error("Login Error:", error);
-  
-      // Tangani error dari server atau network
       setErrorMessage(
         error.response?.data?.message || "Terjadi kesalahan. Silakan coba lagi."
       );
+    } finally {
+      setIsLoading(false); // Matikan loading setelah login selesai (sukses/gagal)
     }
   };
-  
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
@@ -47,15 +51,11 @@ function LoginPage() {
         )}
         <form className="flex flex-col gap-4" onSubmit={handleLogin}>
           <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-600"
-            >
+            <label className="block text-sm font-medium text-gray-600">
               Email
             </label>
             <input
               type="email"
-              id="email"
               name="email"
               value={userData.email}
               onChange={(e) =>
@@ -67,15 +67,11 @@ function LoginPage() {
             />
           </div>
           <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-600"
-            >
+            <label className="block text-sm font-medium text-gray-600">
               Password
             </label>
             <input
               type="password"
-              id="password"
               name="password"
               value={userData.password}
               onChange={(e) =>
@@ -86,13 +82,6 @@ function LoginPage() {
               required
             />
           </div>
-          <div className="flex justify-between items-center mt-3">
-            <div className="text-sm text-gray-600">
-              <Link to="/forgot-password" className="hover:underline">
-                Lupa Password?
-              </Link>
-            </div>
-          </div>
           <div className="text-center mt-4">
             <span className="text-gray-600">Belum punya akun? </span>
             <Link to="/register" className="text-pink-600 hover:underline">
@@ -102,8 +91,9 @@ function LoginPage() {
           <button
             type="submit"
             className="w-full bg-pink-400 text-white p-3 rounded-md mt-4 hover:bg-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-300"
+            disabled={isLoading} // Disable tombol saat login diproses
           >
-            Masuk
+            {isLoading ? "Sedang masuk..." : "Masuk"}
           </button>
         </form>
       </div>
