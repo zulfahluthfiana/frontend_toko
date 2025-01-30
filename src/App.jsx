@@ -12,7 +12,7 @@ import Layanan from "./Pages/Layanan";
 import Tentang from "./Pages/Tentang";
 import HasilProduk from "./Pages/HasilProduk";
 import LoginPage from "./Pages/LoginPage";
-import RegisterPage from "./Pages/RegisterPage";
+import RegisterPage from "./Pages/Registerpage";
 import AddProduk from "./Pages/AddProduk";
 import EditProduk from "./Pages/EditProduk";
 import MenuAdmin from "./Pages/MenuAdmin";
