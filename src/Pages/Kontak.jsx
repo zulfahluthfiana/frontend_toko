@@ -1,9 +1,9 @@
 import { useState } from "react";
 import NavHeader from "../Components/NavHeader";
-import map from "../assets/map.png";
-import call from "../assets/call.png";
-import mail from "../assets/mail.png";
-import koki from "../assets/koki.png";
+import map from "../../public/assets/map.png ";
+import call from "../../public/assets/call.png";
+import mail from "../../public/assets/mail.png";
+import koki from "../../public/assets/koki.png";
 import Footer from "../Components/Footer";
 import axios from "axios";
 
@@ -24,19 +24,22 @@ const Kontak = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const dataToSend = {
       ...formData,
       tanggal_kirim: new Date(),
     };
-  
+
     try {
-      await axios.post("https://backend-weld-three-83.vercel.app/api/kritik_saran", dataToSend);
+      await axios.post(
+        "https://backend-weld-three-83.vercel.app/api/kritik_saran",
+        dataToSend
+      );
       alert("Pesan berhasil dikirim!");
-      setFormData({ username: "", email: "", pesan: "" }); 
+      setFormData({ username: "", email: "", pesan: "" });
     } catch (error) {
       if (error.response) {
-        alert(`Error: ${error.response.data.message || 'Terjadi kesalahan'}`);
+        alert(`Error: ${error.response.data.message || "Terjadi kesalahan"}`);
         console.error("Response error:", error.response.data);
       } else if (error.request) {
         alert("Error: Tidak ada respons dari server");
@@ -47,14 +50,15 @@ const Kontak = () => {
       }
     }
   };
-  
 
   return (
     <>
       <NavHeader nav="Kontak" page="Beranda" pagenav1=">" page2="Kontak" />
       <div className="flex items-center p-5 space-x-20 mx-20">
         <div className="flex-1 w-64 h-auto">
-          <h1 className="text-2xl text-pink-400 font-semibold font-satoshi-light">Lets Get In Touch</h1>
+          <h1 className="text-2xl text-pink-400 font-semibold font-satoshi-light">
+            Lets Get In Touch
+          </h1>
           <p className="text-secondary text-lg font-light font-satoshi-light mr-5">
             jika mengalami kendala pada website dapat menghungi kami langsung
           </p>
@@ -68,11 +72,15 @@ const Kontak = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <img src={call} alt="call" className="w-6 h-6" />
-                <p className="text-secondary text-lg font-light font-satoshi-light">+62 822821789</p>
+                <p className="text-secondary text-lg font-light font-satoshi-light">
+                  +62 822821789
+                </p>
               </div>
               <div className="flex items-center space-x-2">
                 <img src={mail} alt="mail" className="w-6 h-6" />
-                <p className="text-secondary text-lg font-light font-satoshi-light">zulfahluthfiana@mail.com</p>
+                <p className="text-secondary text-lg font-light font-satoshi-light">
+                  zulfahluthfiana@mail.com
+                </p>
               </div>
               <div className="mt-4">
                 <img src={koki} alt="koki" className="w-60 h-64" />
@@ -82,12 +90,19 @@ const Kontak = () => {
         </div>
 
         <div className="flex-1 w-64 h-70 p-4 bg-pink-300 rounded-lg shadow-md">
-          <h2 className="text-lg font-semibold mb-4 text-white">Kritik dan Saran</h2>
-          <p className="text-sm mb-4 text-white">Berikan pendapatmu mengenai toko ini</p>
+          <h2 className="text-lg font-semibold mb-4 text-white">
+            Kritik dan Saran
+          </h2>
+          <p className="text-sm mb-4 text-white">
+            Berikan pendapatmu mengenai toko ini
+          </p>
 
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="username" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="username"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Username
               </label>
               <input
@@ -102,7 +117,10 @@ const Kontak = () => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email
               </label>
               <input
@@ -117,7 +135,10 @@ const Kontak = () => {
               />
             </div>
             <div>
-              <label htmlFor="pesan" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="pesan"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Pesan
               </label>
               <textarea
