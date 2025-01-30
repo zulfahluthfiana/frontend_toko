@@ -4,7 +4,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 import Beranda from "./pages/beranda";
 import Kontak from "./pages/kontak";
 import Produk from "./Pages/produk";
@@ -18,7 +18,7 @@ import EditProduk from "./Pages/editproduk";
 import MenuAdmin from "./Pages/MenuAdmin";
 import DetailProduk from "./Pages/detailproduk";
 import { AuthProvider } from "./Auth/authcontext";
-import PublicRoutes from "./components/publicroutes";
+import PublicRoutes from "./components/PublicRoutes";
 
 const Layout = () => {
   const location = useLocation();
