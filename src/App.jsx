@@ -1,27 +1,40 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Beranda from "./pages/Beranda";
-import Kontak from "./pages/Kontak";
-import Produk from "./Pages/Produk";
-import Layanan from "./Pages/Layanan";
-import Tentang from "./Pages/Tentang";
-import HasilProduk from "./Pages/HasilProduk";
-import LoginPage from "./Pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
-import AddProduk from "./Pages/AddProduk";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import Navbar from "./components/navbar";
+import Beranda from "./pages/beranda";
+import Kontak from "./pages/kontak";
+import Produk from "./Pages/produk";
+import Layanan from "./Pages/layanan";
+import Tentang from "./Pages/tentang";
+import HasilProduk from "./Pages/hasilproduk";
+import LoginPage from "./Pages/loginpage";
+import RegisterPage from "./pages/registerpage";
+import AddProduk from "./Pages/addproduk";
 import EditProduk from "./Pages/editproduk";
 import MenuAdmin from "./Pages/MenuAdmin";
-import DetailProduk from "./Pages/DetailProduk";
-import { AuthProvider } from "./Auth/AuthContext";
-import PublicRoutes from "./components/PublicRoutes";
+import DetailProduk from "./Pages/detailproduk";
+import { AuthProvider } from "./Auth/authcontext";
+import PublicRoutes from "./components/publicroutes";
 
 const Layout = () => {
   const location = useLocation();
-  const hideNavbarPaths = ["/login", "/register", "/loginadmin", "/admin", "/addproduk", "/hasil", "/editproduk/:id","/admin"];
+  const hideNavbarPaths = [
+    "/login",
+    "/register",
+    "/loginadmin",
+    "/admin",
+    "/addproduk",
+    "/hasil",
+    "/editproduk/:id",
+    "/admin",
+  ];
 
   return (
     <>
-      
       {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
       <Routes>
         <Route element={<PublicRoutes />}>
