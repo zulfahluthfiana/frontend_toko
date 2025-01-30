@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./layouts"; // Import Layout yang sudah diperbaiki
+import Layout from "./layouts"; // Pastikan file ini benar
 import Beranda from "./Pages/Beranda";
 import Kontak from "./Pages/Kontak";
 import Produk from "./Pages/Produk";
@@ -12,39 +12,37 @@ import AddProduk from "./Pages/AddProduk";
 import EditProduk from "./Pages/EditProduk";
 import MenuAdmin from "./Pages/MenuAdmin";
 import DetailProduk from "./Pages/DetailProduk";
-// import { AuthProvider } from "./Auth/AuthContext";
-// import PublicRoutes from "./Components/PublicRoutes";
+import { AuthProvider } from "./Auth/AuthContext";
+x
 
 const App = () => {
   return (
-
+    <AuthProvider> 
       <Router>
         <Routes>
-          {/* Layout akan menangani Navbar */}
+          {/* Rute yang menggunakan Layout dengan Navbar */}
           <Route element={<Layout />}>
-            {/* Public Routes */}
-            
-              <Route path="/" element={<Beranda />} />
-              <Route path="/kontak" element={<Kontak />} />
-              <Route path="/produk" element={<Produk />} />
-              <Route path="/produk/:id" element={<DetailProduk />} />
-              <Route path="/layanan" element={<Layanan />} />
-              <Route path="/tentang" element={<Tentang />} />
-              <Route path="/register" element={<RegisterPage />} />
-          
-
-            {/* Admin & Protected Routes */}
-            <Route path="/addproduk" element={<AddProduk />} />
-            <Route path="/editproduk/:id" element={<EditProduk />} />
-            <Route path="/hasil" element={<HasilProduk />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/admin" element={<MenuAdmin />} />
-
-            {/* 404 Page */}
-            <Route path="*" element={<h1>404 Not Found</h1>} />
+            <Route path="/" element={<Beranda />} />
+            <Route path="/kontak" element={<Kontak />} />
+            <Route path="/produk" element={<Produk />} />
+            <Route path="/produk/:id" element={<DetailProduk />} />
+            <Route path="/layanan" element={<Layanan />} />
+            <Route path="/tentang" element={<Tentang />} />
+            <Route path="/register" element={<RegisterPage />} />
           </Route>
+
+          {/* Rute yang tidak menggunakan Navbar (Admin & Login) */}
+          <Route path="/addproduk" element={<AddProduk />} />
+          <Route path="/editproduk/:id" element={<EditProduk />} />
+          <Route path="/hasil" element={<HasilProduk />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/admin" element={<MenuAdmin />} />
+
+          {/* 404 Page */}
+          <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
       </Router>
+    </AuthProvider>
   );
 };
 
