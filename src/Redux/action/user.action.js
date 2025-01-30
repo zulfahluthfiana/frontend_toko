@@ -30,7 +30,7 @@ export const createPelanggan = (pelanggan) => async (dispatch) => {
 export const loginPelanggan = (pelanggan) => async (dispatch) => {
   dispatch({ type: pelangganActions.CREATE_PELANGGAN_REQUEST });
   try {
-    const response = await fetch("https://backend-weld-three-83.vercel.app//api/user/loginUser", {
+    const response = await fetch("https://backend-weld-three-83.vercel.app/api/user/loginUser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

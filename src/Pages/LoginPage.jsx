@@ -13,22 +13,28 @@ function LoginPage() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setErrorMessage(""); // Reset pesan error sebelum login
+  
     try {
       const pelangganLogin = {
         email: userData.email,
         password: userData.password,
       };
-      const response = await dispatch(loginPelanggan(pelangganLogin));
-      if (response?.role === "admin") {
-        console.log("Login berhasil sebagai admin");
-      } else {
-        setErrorMessage("Hanya admin yang dapat login.");
-      }
+  
+      // Dispatch login action
+      const response = await dispatch(loginPelanggan(pelangganLogin)).unwrap();
+  
+      console.log("Login berhasil:", response); // Log hasil login
     } catch (error) {
-      console.log(error);
-      setErrorMessage("Terjadi kesalahan. Silakan coba lagi.");
+      console.error("Login Error:", error);
+  
+      // Tangani error dari server atau network
+      setErrorMessage(
+        error.response?.data?.message || "Terjadi kesalahan. Silakan coba lagi."
+      );
     }
   };
+  
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
