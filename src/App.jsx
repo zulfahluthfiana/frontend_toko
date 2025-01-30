@@ -5,20 +5,20 @@ import {
   useLocation,
 } from "react-router-dom";
 import Navbar from "./Components/Navbar";
-import Beranda from "./pages/beranda";
-import Kontak from "./pages/kontak";
+import Beranda from "./Pages/beranda";
+import Kontak from "./Pages/kontak";
 import Produk from "./Pages/produk";
 import Layanan from "./Pages/layanan";
 import Tentang from "./Pages/tentang";
 import HasilProduk from "./Pages/hasilproduk";
 import LoginPage from "./Pages/loginpage";
-import RegisterPage from "./pages/registerpage";
+import RegisterPage from "./Pages/registerpage";
 import AddProduk from "./Pages/addproduk";
 import EditProduk from "./Pages/editproduk";
 import MenuAdmin from "./Pages/MenuAdmin";
 import DetailProduk from "./Pages/detailproduk";
 import { AuthProvider } from "./Auth/authcontext";
-import PublicRoutes from "./components/PublicRoutes";
+import PublicRoutes from "./Components/PublicRoutes";
 
 const Layout = () => {
   const location = useLocation();
