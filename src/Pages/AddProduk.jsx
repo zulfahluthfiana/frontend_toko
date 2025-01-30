@@ -22,7 +22,7 @@ const AddProduk = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3001/api/product", {
+      const response = await axios.post("https://backend-weld-three-83.vercel.app/api/product", {
         nama,
         harga,
         gambar,

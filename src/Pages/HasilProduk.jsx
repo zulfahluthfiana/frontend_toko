@@ -30,7 +30,7 @@ const HasilProduk = () => {
     if (!confirmDelete) return;
 
     try {
-      const response = await fetch(`http://localhost:3001/api/product/${id}`, {
+      const response = await fetch(`https://backend-weld-three-83.vercel.app/api/product/${id}`, {
         method: "DELETE",
       });
 

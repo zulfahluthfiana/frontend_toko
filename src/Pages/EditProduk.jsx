@@ -18,7 +18,7 @@ const EditProduk = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/api/product/${id}`);
+        const response = await axios.get(`https://backend-weld-three-83.vercel.app/api/product/${id}`);
         const product = response.data.product;
 
         setNama(product.nama);
@@ -45,7 +45,7 @@ const EditProduk = () => {
     }
 
     try {
-      const response = await axios.put(`http://localhost:3001/api/product/${id}`, {
+      const response = await axios.put(`https://backend-weld-three-83.vercel.app/api/product/${id}`, {
         nama,
         harga,
         gambar,

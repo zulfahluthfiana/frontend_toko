@@ -31,7 +31,7 @@ const Kontak = () => {
     };
   
     try {
-      await axios.post("http://localhost:3001/api/kritik_saran", dataToSend);
+      await axios.post("https://backend-weld-three-83.vercel.app/api/kritik_saran", dataToSend);
       alert("Pesan berhasil dikirim!");
       setFormData({ username: "", email: "", pesan: "" }); 
     } catch (error) {
