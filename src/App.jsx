@@ -1,10 +1,5 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
-import Navbar from "./Components/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./layouts"; // Import Layout yang sudah diperbaiki
 import Beranda from "./Pages/Beranda";
 import Kontak from "./Pages/Kontak";
 import Produk from "./Pages/Produk";
@@ -20,46 +15,35 @@ import DetailProduk from "./Pages/DetailProduk";
 import { AuthProvider } from "./Auth/AuthContext";
 import PublicRoutes from "./Components/PublicRoutes";
 
-const Layout = () => {
-  const location = useLocation();
-  const hideNavbarPaths = [
-    "/login",
-    "/register",
-    "/loginadmin",
-    "/admin",
-    "/addproduk",
-    "/hasil",
-    "/editproduk/:id",
-  ];
-
-  return (
-    <>
-      {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
-      <Routes>
-        <Route element={<PublicRoutes />}>
-          <Route path="/" element={<Beranda />} />
-          <Route path="/kontak" element={<Kontak />} />
-          <Route path="/produk" element={<Produk />} />
-          <Route path="/produk/:id" element={<DetailProduk />} />
-          <Route path="/layanan" element={<Layanan />} />
-          <Route path="/tentang" element={<Tentang />} />
-          <Route path="/register" element={<RegisterPage />} />
-        </Route>
-        <Route path="/addproduk" element={<AddProduk />} />
-        <Route path="/editproduk/:id" element={<EditProduk />} />
-        <Route path="/hasil" element={<HasilProduk />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/admin" element={<MenuAdmin />} />
-      </Routes>
-    </>
-  );
-};
-
 const App = () => {
   return (
     <AuthProvider>
       <Router>
-        <Layout />
+        <Routes>
+          {/* Layout akan menangani Navbar */}
+          <Route element={<Layout />}>
+            {/* Public Routes */}
+            <Route element={<PublicRoutes />}>
+              <Route path="/" element={<Beranda />} />
+              <Route path="/kontak" element={<Kontak />} />
+              <Route path="/produk" element={<Produk />} />
+              <Route path="/produk/:id" element={<DetailProduk />} />
+              <Route path="/layanan" element={<Layanan />} />
+              <Route path="/tentang" element={<Tentang />} />
+              <Route path="/register" element={<RegisterPage />} />
+            </Route>
+
+            {/* Admin & Protected Routes */}
+            <Route path="/addproduk" element={<AddProduk />} />
+            <Route path="/editproduk/:id" element={<EditProduk />} />
+            <Route path="/hasil" element={<HasilProduk />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/admin" element={<MenuAdmin />} />
+
+            {/* 404 Page */}
+            <Route path="*" element={<h1>404 Not Found</h1>} />
+          </Route>
+        </Routes>
       </Router>
     </AuthProvider>
   );
