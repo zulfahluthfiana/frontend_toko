@@ -12,12 +12,12 @@ import AddProduk from "./Pages/AddProduk";
 import EditProduk from "./Pages/EditProduk";
 import MenuAdmin from "./Pages/MenuAdmin";
 import DetailProduk from "./Pages/DetailProduk";
-import { AuthProvider } from "./Auth/AuthContext";
+// import { AuthProvider } from "./Auth/AuthContext";
 import PublicRoutes from "./Components/PublicRoutes";
 
 const App = () => {
   return (
-    <AuthProvider>
+
       <Router>
         <Routes>
           {/* Layout akan menangani Navbar */}
@@ -45,7 +45,6 @@ const App = () => {
           </Route>
         </Routes>
       </Router>
-    </AuthProvider>
   );
 };
 
