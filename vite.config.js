@@ -7,4 +7,5 @@ export default defineConfig({
   server: {
     historyApiFallback: true, // Menangani routing React Router
   },
+  base: "/",
 });
