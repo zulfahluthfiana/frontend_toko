@@ -13,7 +13,7 @@ import EditProduk from "./Pages/EditProduk";
 import MenuAdmin from "./Pages/MenuAdmin";
 import DetailProduk from "./Pages/DetailProduk";
 // import { AuthProvider } from "./Auth/AuthContext";
-import PublicRoutes from "./Components/PublicRoutes";
+// import PublicRoutes from "./Components/PublicRoutes";
 
 const App = () => {
   return (
@@ -23,7 +23,7 @@ const App = () => {
           {/* Layout akan menangani Navbar */}
           <Route element={<Layout />}>
             {/* Public Routes */}
-            <Route element={<PublicRoutes />}>
+            
               <Route path="/" element={<Beranda />} />
               <Route path="/kontak" element={<Kontak />} />
               <Route path="/produk" element={<Produk />} />
@@ -31,7 +31,7 @@ const App = () => {
               <Route path="/layanan" element={<Layanan />} />
               <Route path="/tentang" element={<Tentang />} />
               <Route path="/register" element={<RegisterPage />} />
-            </Route>
+          
 
             {/* Admin & Protected Routes */}
             <Route path="/addproduk" element={<AddProduk />} />
