@@ -1,4 +1,4 @@
-import Promo from "../../public/assets/Promo.png";
+import Promo from "../../public/assets/promo.png";
 import rate from "../../public/assets/rate.png";
 
 const Riview = () => {
