@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom"; // Tambahkan useNavigate & Link
-import { loginPelanggan } from "../redux/authSlice"; // Sesuaikan dengan path Redux
+import { loginPelanggan } from "../Redux/action/user.action";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ function LoginPage() {
       };
 
       // Dispatch login action dan unwrap agar error bisa ditangkap di catch
-      const response = await dispatch(loginPelanggan(pelangganLogin));
+      const response = await dispatch(loginPelanggan(pelangganLogin)).unwrap();
 
       console.log("Login berhasil:", response);
       navigate("/admin"); // Navigasi ke halaman admin setelah login sukses
