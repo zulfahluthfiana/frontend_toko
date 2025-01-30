@@ -2,7 +2,7 @@ import NavHeader from "../Components/NavHeader";
 import image5 from  "../../public/assets/image5.png";
 import Footer from "../Components/Footer";
 import styles from "../style";
-import promo from "../assets/promo.png";
+import promo from "../../public/assets/promo.png";
 
 const Layanan = () => {
   return (
