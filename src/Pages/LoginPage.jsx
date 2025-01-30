@@ -26,7 +26,7 @@ function LoginPage() {
       };
 
       // Dispatch login action dan unwrap agar error bisa ditangkap di catch
-      const response = await dispatch(loginPelanggan(pelangganLogin)).unwrap();
+      const response = await dispatch(loginPelanggan(pelangganLogin));
 
       console.log("Login berhasil:", response);
       navigate("/admin"); // Navigasi ke halaman admin setelah login sukses
