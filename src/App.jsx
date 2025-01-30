@@ -13,7 +13,6 @@ import EditProduk from "./Pages/EditProduk";
 import MenuAdmin from "./Pages/MenuAdmin";
 import DetailProduk from "./Pages/DetailProduk";
 import { AuthProvider } from "./Auth/AuthContext";
-x
 
 const App = () => {
   return (
