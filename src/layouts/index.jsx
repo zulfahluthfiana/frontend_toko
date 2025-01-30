@@ -1,4 +1,4 @@
-import { useLocation, Outlet } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 
 const Layout = () => {
@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <>
       {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
-      <Outlet />
+    
     </>
   );
 };
