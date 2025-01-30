@@ -4,7 +4,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./Components/Navbar";
 import Beranda from "./pages/beranda";
 import Kontak from "./pages/kontak";
 import Produk from "./Pages/produk";
