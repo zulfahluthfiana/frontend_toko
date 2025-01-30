@@ -7,7 +7,7 @@ const Layout = () => {
 
   return (
     <>
-      {!hideNavbarPaths.some((path) => location.pathname.startsWith(path)) && <Navbar />}
+      {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
       <Outlet />
     </>
   );
