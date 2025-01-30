@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logobru from "../assets/logobru.png";
+import logobru from "../../public/assets/logobru.png";
 import { FiAlignJustify } from "react-icons/fi";
 
 const Navbar = () => {

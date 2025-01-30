@@ -1,6 +1,6 @@
-import karyawan1 from "../assets/karyawan1.jpeg";
-import karyawan2 from "../assets/karyawan2.jpeg";
-import karyawan3 from "../assets/karyawan3.jpeg";
+import karyawan1 from "../../public/assets/karyawan1.jpeg";
+import karyawan2 from "../../public/assets/karyawan2.jpeg";
+import karyawan3 from "../../public/assets/karyawan3.jpeg";
 
 
 

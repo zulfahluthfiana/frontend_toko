@@ -1,5 +1,5 @@
-import Cakenav from "../assets/Cakenav.png";
-import strawberry from "../assets/strawbery.png";
+import Cakenav from "../../public/assets/Cakenav.png";
+import strawberry from "../../public/assets/strawberry.png";
 
 
 const Hero = () => {

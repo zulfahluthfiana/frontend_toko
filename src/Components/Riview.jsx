@@ -1,5 +1,5 @@
-import Promo from "../assets/Promo.jpg";
-import rate from "../assets/rate.png";
+import Promo from "../../public/assets/Promo.png";
+import rate from "../../public/assets/rate.png";
 
 const Riview = () => {
   return (
@@ -45,8 +45,8 @@ const Riview = () => {
               <div className="p-4 text-center">
                 <img src={rate} alt="rating" className="w-24 mx-auto mb-2" />
                 <p className="text-slate-500">
-                  Rasa kue ini luar biasa! Selalu menjadi favorit keluarga kami di
-                  setiap acara spesial.
+                  Rasa kue ini luar biasa! Selalu menjadi favorit keluarga kami
+                  di setiap acara spesial.
                 </p>
               </div>
             </div>
@@ -65,8 +65,8 @@ const Riview = () => {
               <div className="p-4 text-center">
                 <img src={rate} alt="rating" className="w-24 mx-auto mb-2" />
                 <p className="text-slate-500">
-                  Tekstur dan rasa yang sempurna! Sangat cocok sebagai hadiah atau
-                  untuk camilan di sore hari.
+                  Tekstur dan rasa yang sempurna! Sangat cocok sebagai hadiah
+                  atau untuk camilan di sore hari.
                 </p>
               </div>
             </div>

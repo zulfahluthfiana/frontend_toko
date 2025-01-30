@@ -1,6 +1,6 @@
-import cake2 from "../assets/cake2.jpeg";
-import cake6 from "../assets/cake6.jpeg";
-import cake7 from "../assets/cake7.jpeg";
+import cake2 from "../../public/assets/cake2.jpeg";
+import cake6 from "../../public/assets/cake6.jpeg";
+import cake7 from "../../public/assets/cake7.jpeg";
 
 
 

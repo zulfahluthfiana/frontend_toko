@@ -1,11 +1,11 @@
 import NavHeader from "../Components/NavHeader";
-import rumah from "../assets/rumah.jpeg";
-import karyawan1 from "../assets/karyawan1.jpeg";
-import CEK4 from "../assets/CEK4.jpeg";
-import karyawan3 from "../assets/karyawan3.jpeg";
-import karyawan6 from "../assets/karyawan6.jpeg";
-import karyawan5 from "../assets/karyawan5.jpeg";
-import CEK3 from "../assets/CEK3.jpeg";
+import rumah from "../../public/assets/rumah.jpeg";
+import karyawan1 from "../../public/assets/karyawan1.jpeg";
+import CEK4 from "../../public/assets/CEK4.jpeg";
+import karyawan3 from "../../public/assets/karyawan3.jpeg";
+import karyawan6 from "../../public/assets/karyawan6.jpeg";
+import karyawan5 from "../../public/assets/karyawan5.jpeg";
+import CEK3 from "../../public/assets/CEK3.jpeg";
 import Footer from "../Components/Footer";
 
 const Tentang = () => {
