@@ -1,6 +1,6 @@
 import { useState } from "react";
 import NavHeader from "../Components/NavHeader";
-import map from "../../public/assets/map.png ";
+import map from "../../public/assets/map.png";
 import call from "../../public/assets/call.png";
 import mail from "../../public/assets/mail.png";
 import koki from "../../public/assets/koki.png";
